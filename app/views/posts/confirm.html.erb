@@ -1,0 +1,11 @@
+<%= form_with(model: @post, local: true) do |form| %>
+  <div class="field">
+    <%= form.hidden_field :content %>
+    <p>content:<%= @post.content %></p>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+    <%= form.submit "Back", name: 'back' %>
+  </div>
+<% end %>
