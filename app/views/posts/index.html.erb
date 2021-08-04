@@ -1,26 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Your Tweets</h1>
+<h2>Your Tweets</h2>
 
 <table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <tr>
+    <th colspan="5"><%= image_tag 'profile.jpg', width:'50px' %> Moeka</th>
 
-  <tbody>
+  </tr>
     <% @posts.each do |post| %>
+      <tr class="content">
+        <td rowspan="2"><%= image_tag 'profile.jpg', width:'50px', class:"image" %></td>
+        <td colspan="4"><%= post.content %></td>
+      </tr>
       <tr>
-        <td><%= post.content %></td>
+        <td colspan="2"><%= post.created_at %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <tr>
     <% end %>
-  </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>

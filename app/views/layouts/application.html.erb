@@ -10,6 +10,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1><%= link_to 'TwitterClone', posts_path %></h1>
+    </header>
+    <nav>
+      <div class="container">
+          <ul class="clearfix">
+              <li><%= link_to 'Top', posts_path %></li>
+              <li><%= link_to 'Profile', posts_path %></li>
+              <li><%= link_to 'New Post', new_post_path %></li>
+              <li><%= link_to 'Study', "https://diver.diveintocode.jp/curriculums?progress=true" %></li>
+          </ul>
+      </div>
+    </nav>
+      <%= yield %>
+    <footer class="footer">
+      <p>Copyright ©︎ 2021 DIVE INC ALL RIGHTS RESERVED.</p>
+    </footer>
   </body>
 </html>
