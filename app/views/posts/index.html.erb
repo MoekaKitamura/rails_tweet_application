@@ -5,17 +5,16 @@
 <table>
   <tr>
     <th colspan="5"><%= image_tag 'profile.jpg', width:'50px' %> Moeka</th>
-
   </tr>
     <% @posts.each do |post| %>
       <tr class="content">
-        <td rowspan="2"><%= image_tag 'profile.jpg', width:'50px', class:"image" %></td>
+        <td rowspan="2" class="image" ><%= image_tag 'profile.jpg', width:'50px', class:"image" %></td>
         <td colspan="4"><%= post.content %></td>
       </tr>
       <tr>
-        <td colspan="2"><%= post.created_at %></td>
+        <td colspan="2"><%= post.created_at.strftime('%Y/%m/%d %H:%M')%></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <tr>
+      </tr>
     <% end %>
 </table>
